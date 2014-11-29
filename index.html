@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+      <link href="css/demo.css" rel="stylesheet">
+    </head>
+  <body>
+  <h1>Isotope - data filter without javascript</h1>
+  <div class="demobox">  
+    <h2>nth-child selected</h2>
+    <input type="radio" class="link all" value="1" name="boxes" id="demo-all" checked="checked" /><label for="demo-all">All</label>
+    <input type="radio" class="link even" value="2" name="boxes" id="demo-even" /><label for="demo-even">Every even</label>
+    <input type="radio" class="link odd" value="3" name="boxes" id="demo-odd" /><label for="demo-odd">Every odd</label>
+    <input type="radio" class="link third" value="4" name="boxes" id="demo-third" /><label for="demo-third">Every third</label>
+    
+    <input type="radio" class="radius r0" value="r0" name="radius" id="radius0" checked="checked"/><label for="radius0">Radius 0</label>
+    <input type="radio" class="radius r5" value="r5" name="radius" id="radius5" /><label for="radius5">Radius 1</label>
+    <input type="radio" class="radius r10" value="r10" name="radius" id="radius10" /><label for="radius10">Radius 2</label>
+    <div class="boxes">
+      <div class="box" data-counter="1"></div>
+      <div class="box" data-counter="2"></div>
+      <div class="box" data-counter="3"></div>
+      <div class="box" data-counter="4"></div>
+      <div class="box" data-counter="5"></div>
+      <div class="box" data-counter="6"></div>
+      <div class="box" data-counter="7"></div>
+      <div class="box" data-counter="8"></div>
+      <div class="box" data-counter="9"></div>
+      <div class="box" data-counter="10"></div>
+      <div class="box" data-counter="11"></div>
+      <div class="box" data-counter="12"></div>
+      <div class="box" data-counter="13"></div>
+      <div class="box" data-counter="14"></div>
+    </div>
+  </div>
+
+    <div class="demobox">
+    <h2>class selected images - lorempixel.com</h2>
+    <input type="radio" class="link all3" value="1" name="boxes3" id="demo-all3" checked="checked" /><label for="demo-all3">All</label>
+    <input type="radio" class="link nature" value="2" name="boxes3" id="demo-nature" /><label for="demo-nature">nature</label>
+    <input type="radio" class="link people" value="3" name="boxes3" id="demo-people" /><label for="demo-people">people</label>
+    <input type="radio" class="link animals" value="4" name="boxes3" id="demo-animals" /><label for="demo-animals">animals</label>
+    
+    <input type="radio" class="radius r0" value="r0" name="radius3" id="radius00_3" checked="checked"/><label for="radius00_3">Radius 0</label>
+    <input type="radio" class="radius r5" value="r5" name="radius3" id="radius05_3" /><label for="radius05_3">Radius 1</label>
+    <input type="radio" class="radius r10" value="r10" name="radius3" id="radius010_3" /><label for="radius010_3">Radius 2</label>
+    <div class="boxes lorempixel">
+      <img class="box nature" src="http://lorempixel.com/300/150/nature/1" data-counter="1" />
+      <img class="box nature" src="http://lorempixel.com/300/150/nature/2" data-counter="2" />
+      <img class="box nature" src="http://lorempixel.com/300/150/nature/3" data-counter="3" />
+      <img class="box nature" src="http://lorempixel.com/300/150/nature/4" data-counter="4" />
+      <img class="box people" src="http://lorempixel.com/300/150/people/1" data-counter="5" />
+      <img class="box people" src="http://lorempixel.com/300/150/people/2" data-counter="6" />
+      <img class="box people" src="http://lorempixel.com/300/150/people/3" data-counter="7" />
+      <img class="box people" src="http://lorempixel.com/300/150/people/4" data-counter="8" />
+      <img class="box animals" src="http://lorempixel.com/300/150/animals/1" data-counter="9" />
+      <img class="box animals" src="http://lorempixel.com/300/150/animals/2" data-counter="10" />
+      <img class="box animals" src="http://lorempixel.com/300/150/animals/3" data-counter="11" />
+      <img class="box animals" src="http://lorempixel.com/300/150/animals/4" data-counter="12" />
+    </div>
+  </div>
+
+  
+    <div class="demobox">
+    <h2>class selected</h2>
+    <input type="radio" class="link all2" value="1" name="boxes2" id="demo-all2" checked="checked" /><label for="demo-all2">All</label>
+    <input type="radio" class="link webdesign" value="2" name="boxes2" id="demo-webdesign" /><label for="demo-webdesign">webdesign</label>
+    <input type="radio" class="link icons" value="3" name="boxes2" id="demo-icons" /><label for="demo-icons">icons</label>
+    <input type="radio" class="link illustration" value="4" name="boxes2" id="demo-illustration" /><label for="demo-illustration">illustration</label>
+    
+    <input type="radio" class="radius r0" value="r0" name="radius2" id="radius00" checked="checked"/><label for="radius00">Radius 0</label>
+    <input type="radio" class="radius r5" value="r5" name="radius2" id="radius05" /><label for="radius05">Radius 1</label>
+    <input type="radio" class="radius r10" value="r10" name="radius2" id="radius010" /><label for="radius010">Radius 2</label>
+    <div class="boxes">
+      <div class="box webdesign" data-counter="webdesign"></div>
+      <div class="box icons" data-counter="icons"></div>
+      <div class="box icons" data-counter="icons"></div>
+      <div class="box illustration" data-counter="illustration"></div>
+      <div class="box webdesign" data-counter="webdesign"></div>
+      <div class="box webdesign" data-counter="webdesign"></div>
+      <div class="box illustration" data-counter="illustration"></div>
+      <div class="box icons" data-counter="icons"></div>
+      <div class="box webdesign" data-counter="webdesign"></div>
+      <div class="box illustration" data-counter="illustration"></div>
+      <div class="box webdesign" data-counter="webdesign"></div>
+      <div class="box illustration" data-counter="illustration"></div>
+      <div class="box illustration" data-counter="illustration"></div>
+      <div class="box webdesign" data-counter="webdesign"></div>
+    </div>
+  </div>
+  
+
+  </body>
+</html>

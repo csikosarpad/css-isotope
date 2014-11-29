@@ -1,0 +1,326 @@
+html, body {
+  padding: 10px;
+  margin: 0;
+}
+
+/* animation */
+@-webkit-keyframes zoomOut {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+            transform: scale3d(.3, .3, .3);
+  }
+
+  100% {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0 -4px 0 0;
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+            transform: scale3d(.3, .3, .3);
+  }
+
+  100% {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0 -4px 0 0;
+  }
+}
+
+@-webkit-keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+            transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+            transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+/* /animation */
+
+
+.demobox {
+  width: 50%;
+  margin: 3% auto;
+  border: 1px solid #555;
+}
+
+.boxes {
+  width: 100%;
+  background: #555;
+}
+
+.boxes .box {
+  width: 33%;
+  margin: 0 -4px 0 0;
+  height: 100px;
+  display: inline-block;
+  position: relative;
+  counter-increment: myIndex;
+}
+.boxes.lorempixel .box {
+  height: 150px;
+}
+
+.boxes .box:before {
+  content: attr(data-counter);
+  font-size: 30px;
+  line-height: 80px;
+  text-align: center;
+  vertical-align: middle;
+  display: block;
+  position: absolute;
+  left: 5%;
+  top: 5%;
+  width: 90%;
+  height: 90%;
+  color: #fff;
+  background: rgba(127, 0, 0, 0.5);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.boxes.lorempixel .box:before {  
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+select.radius:after {
+  content: attr(value);
+  display: block;
+  width: auto;
+  font-size: 20px;
+  height: auto;
+}
+
+.boxes  .box:nth-child(2n){
+  background: #f00;
+}
+
+.boxes  .box:nth-child(2n+1){
+  background: #0f0;
+}
+
+.boxes  .box:nth-child(3n){
+  background: #00f;
+}
+
+.demobox input[type="radio"].link,
+.demobox input[type="radio"].radius {
+  display: none;
+}
+
+.demobox input[type="radio"].link  + label {
+  display: inline-block;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 0 1%;
+  margin: 0 0 2% 0;
+  border-bottom: 2px solid #000;  
+}
+
+.demobox input[type="radio"].radius  + label {
+  display: inline-block;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 1%;
+  margin: 0 0 2% 0;
+  border-bottom: 2px solid #000;
+}
+
+
+.demobox input[type="radio"].radius:checked ~ .boxes .box,
+.demobox input[type="radio"].radius:checked ~ .boxes .box:before {
+-webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.demobox input[type="radio"].radius.r0:checked ~ .boxes .box,
+.demobox input[type="radio"].radius.r0:checked ~ .boxes .box:before {
+  border-radius: 0;
+}
+.demobox input[type="radio"].radius.r5:checked ~ .boxes .box,
+.demobox input[type="radio"].radius.r5:checked ~ .boxes .box:before {
+  border-radius: 25%;
+}
+.demobox input[type="radio"].radius.r10:checked ~ .boxes .box,
+.demobox input[type="radio"].radius.r10:checked ~ .boxes .box:before {
+  border-radius: 50%;
+}
+
+
+
+.demobox input[type="radio"].all:checked  ~ .boxes .box {
+  -webkit-animation-name: zoomIn;
+          animation-name: zoomIn;
+}
+
+.demobox input[type="radio"]:checked  + label {
+  color: red;
+  background-color: rgba(255, 0, 0, 0.5 );
+  color: #fff;
+  border-bottom-color: #f00;
+}
+
+.demobox input[type="radio"].radius:checked  + label {
+  background-color: rgba(0, 64, 0, 0.5 );
+  border-bottom-color: #0f0;
+}
+
+.demobox input[type="radio"]:checked  ~ .boxes  .box {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+/* odd */
+.demobox input[type="radio"].odd:checked  ~ .boxes  .box:nth-child(2n),
+.demobox input[type="radio"].odd:checked  ~ .boxes  .box:nth-child(3n){
+  -webkit-animation-name: zoomOut;
+          animation-name: zoomOut;
+}
+.demobox input[type="radio"].odd:checked  ~ .boxes  .box:nth-child(2n +1){
+  -webkit-animation-name: zoomIn;
+          animation-name: zoomIn;
+}
+
+/* even */
+.demobox input[type="radio"].even:checked  ~ .boxes  .box:nth-child(2n+1) {
+  -webkit-animation-name: zoomOut;
+          animation-name: zoomOut;
+}
+.demobox input[type="radio"].even:checked  ~ .boxes  .box:nth-child(2n) {
+  -webkit-animation-name: zoomIn;
+          animation-name: zoomIn;
+}
+
+/* third */
+.demobox input[type="radio"].third:checked  ~ .boxes  .box:nth-child(2n),
+.demobox input[type="radio"].third:checked  ~ .boxes  .box:nth-child(2n +1) {
+  -webkit-animation-name: zoomOut;
+          animation-name: zoomOut;
+}
+
+.demobox input[type="radio"].third:checked  ~ .boxes  .box:nth-child(3n) {
+  -webkit-animation-name: zoomIn;
+          animation-name: zoomIn;
+}
+/**/
+
+/* class select */
+
+/* webdesign */
+.demobox input[type="radio"].webdesign:checked  ~ .boxes  .box.icons,
+.demobox input[type="radio"].webdesign:checked  ~ .boxes  .box.illustration{
+  -webkit-animation-name: zoomOut;
+          animation-name: zoomOut;
+}
+.demobox input[type="radio"].webdesign:checked  ~ .boxes  .box.webdesign{
+  -webkit-animation-name: zoomIn;
+          animation-name: zoomIn;
+}
+
+/* icons */
+.demobox input[type="radio"].icons:checked  ~ .boxes  .box.webdesign,
+.demobox input[type="radio"].icons:checked  ~ .boxes  .box.illustration{
+  -webkit-animation-name: zoomOut;
+          animation-name: zoomOut;
+}
+.demobox input[type="radio"].icons:checked  ~ .boxes  .box.icons {
+  -webkit-animation-name: zoomIn;
+          animation-name: zoomIn;
+}
+
+/* illustration */
+.demobox input[type="radio"].illustration:checked  ~ .boxes  .box.webdesign,
+.demobox input[type="radio"].illustration:checked  ~ .boxes  .box.icons {
+  -webkit-animation-name: zoomOut;
+          animation-name: zoomOut;
+}
+
+.demobox input[type="radio"].illustration:checked  ~ .boxes  .box.illustration {
+  -webkit-animation-name: zoomIn;
+          animation-name: zoomIn;
+}
+
+/* images */
+
+/* nature */
+.demobox input[type="radio"].nature:checked  ~ .boxes  .box.people,
+.demobox input[type="radio"].nature:checked  ~ .boxes  .box.animals{
+  -webkit-animation-name: zoomOut;
+          animation-name: zoomOut;
+}
+.demobox input[type="radio"].nature:checked  ~ .boxes  .box.nature{
+  -webkit-animation-name: zoomIn;
+          animation-name: zoomIn;
+}
+
+/* people */
+.demobox input[type="radio"].people:checked  ~ .boxes  .box.nature,
+.demobox input[type="radio"].people:checked  ~ .boxes  .box.animals{
+  -webkit-animation-name: zoomOut;
+          animation-name: zoomOut;
+}
+.demobox input[type="radio"].people:checked  ~ .boxes  .box.people {
+  -webkit-animation-name: zoomIn;
+          animation-name: zoomIn;
+}
+
+/* animals */
+.demobox input[type="radio"].animals:checked  ~ .boxes  .box.nature,
+.demobox input[type="radio"].animals:checked  ~ .boxes  .box.people {
+  -webkit-animation-name: zoomOut;
+          animation-name: zoomOut;
+}
+
+.demobox input[type="radio"].animals:checked  ~ .boxes  .box.animals {
+  -webkit-animation-name: zoomIn;
+          animation-name: zoomIn;
+}
+
+
+/* /images */
+
+/* /class select */
+
+@media only screen and (max-width: 800px) {
+  .demobox {
+    width: 100%;
+  }
+}
